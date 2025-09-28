@@ -1,2 +1,8 @@
 Flask==3.0.2
 python-dotenv==1.0.1
+
+alembic~=1.16.5
+SQLAlchemy~=2.0.43
+WTForms~=3.2.1
+Flask-Migrate~=4.0.7
+click~=8.3.0
