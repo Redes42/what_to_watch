@@ -6,3 +6,4 @@ SQLAlchemy~=2.0.43
 WTForms~=3.2.1
 Flask-Migrate~=4.0.7
 click~=8.3.0
+flask_wtf
