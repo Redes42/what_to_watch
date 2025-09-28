@@ -4,7 +4,7 @@ from random import randrange
 from flask import jsonify, request
 
 from . import app, db
-from error_handlers import InvalidAPIUsage
+from .error_handlers import InvalidAPIUsage
 from .models import Opinion
 from .views import random_opinion
 
