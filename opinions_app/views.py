@@ -1,6 +1,6 @@
 from random import randrange
 
-from flask import abort, flash, redirect, render_template, url_for
+from flask import abort, flash, redirect, render_template, request, url_for
 
 from . import app, db
 from .forms import OpinionForm
@@ -25,8 +25,8 @@ def index_view():
 
 @app.route('/add', methods=['GET', 'POST'])
 def add_opinion_view():
-    form = OpinionForm()
-    if form.validate_on_submit():
+    form = OpinionForm(request.form) if request.method == 'POST' else OpinionForm()
+    if request.method == 'POST' and form.validate():
         text = form.text.data
         if Opinion.query.filter_by(text=text).first() is not None:
             flash('Такое мнение уже было оставлено ранее!')
